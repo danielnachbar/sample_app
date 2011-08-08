@@ -124,6 +124,14 @@ describe UsersController do
       response.should have_selector('div.pagination')
     end
     
+    it "should display the micropost count" do
+      10.times { Factory(:micropost, :user =>@user, :content => "foo") }
+      get :show, :id => @user
+      response.should have_selector('td.sidebar',
+                                    :content => @user.microposts.count.to_s )
+    end
+    
+    
   end
 
   describe "GET 'new'" do
