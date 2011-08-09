@@ -7,6 +7,7 @@ class MicropostsController < ApplicationController
     if (@micropost.save)
       redirect_to root_path, :flash => {:success => "Micropost created!"}
     else
+      @feed_items = []      
       render 'pages/home'
     end
   end
