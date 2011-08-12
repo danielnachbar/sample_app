@@ -13,7 +13,7 @@ gem 'faker', '0.3.1'
 
 group :development do
    gem 'rspec-rails', '2.5.0'
-  gem 'annotate-models'
+   gem 'annotate'
 end
 
 group :test do
